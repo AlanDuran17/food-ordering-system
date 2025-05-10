@@ -15,11 +15,9 @@ import com.alanduran.order.service.domain.ports.input.service.OrderApplicationSe
 import com.alanduran.order.service.domain.ports.output.repository.CustomerRepository;
 import com.alanduran.order.service.domain.ports.output.repository.OrderRepository;
 import com.alanduran.order.service.domain.ports.output.repository.RestaurantRepository;
-import org.junit.jupiter.api.AutoClose;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import org.mockito.internal.matchers.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

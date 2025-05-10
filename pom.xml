@@ -24,6 +24,7 @@
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compuler.target>17</maven.compuler.target>
+    <mockito.version>4.3.1</mockito.version>
     <spring-kafka.version>2.8.2</spring-kafka.version>
     <kafka-avro-serializer.version>7.0.1</kafka-avro-serializer.version>
     <avro.version>1.11.4</avro.version>
@@ -89,7 +90,8 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>5.14.2</version>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
       </dependency>
       <!-- order container is not necessary, because it will not be used by other modules,
       it will have a dependency to all modules to create a single JAR file  -->

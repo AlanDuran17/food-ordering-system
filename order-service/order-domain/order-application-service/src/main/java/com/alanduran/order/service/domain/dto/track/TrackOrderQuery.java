@@ -1,6 +1,6 @@
 package com.alanduran.order.service.domain.dto.track;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

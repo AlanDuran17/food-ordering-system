@@ -10,11 +10,11 @@ import com.alanduran.order.service.domain.mapper.OrderDataMapper;
 import com.alanduran.order.service.domain.ports.output.repository.CustomerRepository;
 import com.alanduran.order.service.domain.ports.output.repository.OrderRepository;
 import com.alanduran.order.service.domain.ports.output.repository.RestaurantRepository;
-import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.validation.constraints.NotNull;
 import java.util.Optional;
 import java.util.UUID;
 

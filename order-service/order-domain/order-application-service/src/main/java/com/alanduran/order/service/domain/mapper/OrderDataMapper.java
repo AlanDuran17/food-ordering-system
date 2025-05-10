@@ -13,7 +13,7 @@ import com.alanduran.order.service.domain.valueobject.StreetAddress;
 import com.alanduran.order.service.domain.dto.create.CreateOrderCommand;
 import com.alanduran.order.service.domain.dto.create.CreateOrderResponse;
 import com.alanduran.order.service.domain.dto.create.OrderAddress;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
