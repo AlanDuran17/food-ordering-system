@@ -2,13 +2,11 @@ package com.alanduran.order.service.domain.entity;
 
 import com.alanduran.domain.entity.AggregateRoot;
 import com.alanduran.domain.valueobject.RestaurantId;
-import lombok.Builder;
 import lombok.Getter;
 
 import java.util.List;
 
 @Getter
-@Builder
 public class Restaurant extends AggregateRoot<RestaurantId> {
     private final List<Product> products;
     private boolean active;

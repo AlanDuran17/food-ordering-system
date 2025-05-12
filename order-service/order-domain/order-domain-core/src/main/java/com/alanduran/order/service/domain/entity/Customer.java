@@ -6,6 +6,6 @@ import com.alanduran.domain.valueobject.CustomerId;
 public class Customer extends AggregateRoot<CustomerId> {
 
     public Customer(CustomerId customerId) {
-        super();
+        super.setId(customerId);
     }
 }
