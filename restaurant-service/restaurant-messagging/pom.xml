@@ -5,31 +5,29 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.alanduran</groupId>
-        <artifactId>order-service</artifactId>
+        <artifactId>food-ordering-system</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>order-dataaccess</artifactId>
-
-    <properties>
-    </properties>
+    <artifactId>restaurant-messagging</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.alanduran</groupId>
-            <artifactId>order-application-service</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
+            <artifactId>restaurant-application-service</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alanduran</groupId>
-            <artifactId>common-dataaccess</artifactId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alanduran</groupId>
+            <artifactId>kafka-consumer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alanduran</groupId>
+            <artifactId>kafka-model</artifactId>
         </dependency>
     </dependencies>
 
