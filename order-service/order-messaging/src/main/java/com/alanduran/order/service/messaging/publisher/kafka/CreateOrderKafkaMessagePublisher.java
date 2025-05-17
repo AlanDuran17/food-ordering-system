@@ -29,7 +29,7 @@ public class CreateOrderKafkaMessagePublisher implements OrderCreatedPaymentRequ
     @Override
     public void publish(OrderCreatedEvent domainEvent) {
         String orderId = domainEvent.getOrder().getId().getValue().toString();
-        log.info("Recieved ORderCreatedEvent for order id: {}", orderId);
+        log.info("Recieved OrderCreatedEvent for order id: {}", orderId);
 
         try {
 

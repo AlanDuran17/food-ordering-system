@@ -1,5 +1,6 @@
 package com.alanduran.order.service.dataaccess.order.adapter;
 
+import com.alanduran.domain.valueobject.OrderId;
 import com.alanduran.order.service.domain.entity.Order;
 import com.alanduran.order.service.domain.ports.output.repository.OrderRepository;
 import com.alanduran.order.service.domain.valueobject.TrackingId;
@@ -23,12 +24,17 @@ public class OrderRepositoryImpl implements OrderRepository {
     @Override
     public Order save(Order order) {
         return orderDataAccessMapper.orderEntityToOrder(
-                orderJpaRepository.save(orderDataAccessMapper.ordertoOrderEntity(order)));
+                orderJpaRepository.save(orderDataAccessMapper.orderToOrderEntity(order)));
     }
 
     @Override
     public Optional<Order> findByTrackingId(TrackingId trackingId) {
         return orderJpaRepository.findByTrackingId(trackingId.getValue())
                 .map(orderDataAccessMapper::orderEntityToOrder);
+    }
+
+    @Override
+    public Optional<Order> findByOrderId(OrderId orderId) {
+        return orderJpaRepository.findById(orderId.getValue()).map(orderDataAccessMapper::orderEntityToOrder);
     }
 }

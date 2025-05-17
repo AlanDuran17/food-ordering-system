@@ -34,7 +34,7 @@ public class RestaurantDataAccessMapper {
 
         List<Product> restaurantProducts = restaurantEntities.stream().map(entity ->
                         Product.Builder.builder()
-                                .productId(new ProductId(entity.getProductID()))
+                                .productId(new ProductId(entity.getProductId()))
                                 .name(entity.getProductName())
                                 .price(new Money(entity.getProductPrice()))
                                 .available(entity.getProductAvailable())

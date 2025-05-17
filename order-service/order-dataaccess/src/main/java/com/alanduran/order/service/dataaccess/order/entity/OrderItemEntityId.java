@@ -13,7 +13,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Table(name = "order_items")
-@Entity
 public class OrderItemEntityId implements Serializable {
     private Long id;
     private OrderEntity order;

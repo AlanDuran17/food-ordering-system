@@ -36,6 +36,9 @@ public class OrderItem extends BaseEntity<OrderItemId> {
                 price.multiply(quantity).equals(subtotal);
     }
 
+    boolean isItemValid() {
+        return product.getName() != null && product.getPrice() != null;
+    }
 
     public static final class Builder {
         private OrderItemId orderItemId;

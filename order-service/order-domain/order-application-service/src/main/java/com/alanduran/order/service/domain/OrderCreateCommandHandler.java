@@ -14,20 +14,20 @@ public class OrderCreateCommandHandler {
 
     private final OrderCreateHelper orderCreateHelper;
     private final OrderDataMapper orderDataMapper;
-    private final ApplicationDomainEventPublisher applicationDomainEventPublisher;
+    private final OrderCreatedPaymentRequestMessagePublisher orderCreatedPaymentRequestMessagePublisher;
 
     public OrderCreateCommandHandler(OrderCreateHelper orderCreateHelper,
                                      OrderDataMapper orderDataMapper,
-                                     ApplicationDomainEventPublisher applicationDomainEventPublisher) {
+                                     OrderCreatedPaymentRequestMessagePublisher orderCreatedPaymentRequestMessagePublisher) {
         this.orderCreateHelper = orderCreateHelper;
         this.orderDataMapper = orderDataMapper;
-        this.applicationDomainEventPublisher = applicationDomainEventPublisher;
+        this.orderCreatedPaymentRequestMessagePublisher = orderCreatedPaymentRequestMessagePublisher;
     }
 
     public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {
         OrderCreatedEvent orderCreatedEvent = orderCreateHelper.persistOrder(createOrderCommand);
         log.info("Order is created with id: {}", orderCreatedEvent.getOrder().getId().getValue());
-        applicationDomainEventPublisher.publish(orderCreatedEvent);
+        orderCreatedPaymentRequestMessagePublisher.publish(orderCreatedEvent);
         return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder(), "Order Created Successfully");
     }
 }

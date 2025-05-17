@@ -80,7 +80,7 @@ public class RestaurantApprovalRequestHelper {
                         product.updateWithConfirmedNamePriceAndAvailability(p.getName(), p.getPrice(), p.isAvailable());
                     }
                 }));
-        restaurant.getOrderDetail().setId(new OrderId(UUID.fromString(restaurantApprovalRequest.getRestaurantId())));
+        restaurant.getOrderDetail().setId(new OrderId(UUID.fromString(restaurantApprovalRequest.getOrderId())));
 
         return restaurant;
     }

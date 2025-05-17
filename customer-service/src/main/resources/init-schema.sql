@@ -11,18 +11,18 @@ CREATE TABLE customer.customers
     first_name character varying COLLATE pg_catalog."default" NOT NULL,
     last_name character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT customers_pkey PRIMARY KEY (id)
-)
+);
 
 DROP MATERIALIZED VIEW IF EXISTS customer.order_customer_m_view;
 
 CREATE MATERIALIZED VIEW customer.order_customer_m_view
 TABLESPACE pg_default
 AS
-    SELECT id,
+ SELECT id,
     username,
     first_name,
     last_name
-    FROM customer.customers
+   FROM customer.customers
 WITH DATA;
 
 refresh materialized VIEW customer.order_customer_m_view;

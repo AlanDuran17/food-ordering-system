@@ -8,10 +8,10 @@
   <modules>
     <module>order-service</module>
     <module>common</module>
-      <module>infrastructure</module>
-      <module>infrastructure/kafka</module>
+    <module>infrastructure</module>
+    <module>infrastructure/kafka</module>
     <module>customer-service</module>
-      <module>payment-service</module>
+    <module>payment-service</module>
     <module>payment-service/payment-domain</module>
     <module>payment-service/payment-dataaccess</module>
     <module>payment-service/payment-messaging</module>
@@ -150,6 +150,11 @@
         <groupId>com.alanduran</groupId>
         <artifactId>restaurant-messagging</artifactId>
         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.hypersistence</groupId>
+        <artifactId>hypersistence-utils-hibernate-55</artifactId>
+        <version>3.7.0</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>

@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EnableJpaRepositories(basePackages = {"com.alanduran.order.service.dataaccess", "com.alanduran.common.dataaccess"})
-@EntityScan(basePackages = {"com.alanduran.order.service.dataaccess", "com.alanduran.common.dataaccess"})
+@EnableJpaRepositories(basePackages = {"com.alanduran.order.service.dataaccess", "com.alanduran.dataaccess"})
+@EntityScan(basePackages = {"com.alanduran.order.service.dataaccess", "com.alanduran.dataaccess"})
 @SpringBootApplication(scanBasePackages = "com.alanduran")
 public class OrderServiceApplication {
 

@@ -1,7 +1,10 @@
 package com.alanduran.order.service.dataaccess.order.entity;
 
 import com.alanduran.domain.valueobject.OrderStatus;
+import io.hypersistence.utils.hibernate.type.basic.PostgreSQLEnumType;
 import lombok.*;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +19,10 @@ import java.util.UUID;
 @EqualsAndHashCode(of = {"id"})
 @Table(name = "orders")
 @Entity
+@TypeDef(
+    name = "pgsql_enum",
+    typeClass = PostgreSQLEnumType.class
+)
 public class OrderEntity {
 
     @Id
@@ -25,6 +32,7 @@ public class OrderEntity {
     private UUID trackingId;
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
+    @Type(type = "pgsql_enum")
     private OrderStatus orderStatus;
     private String failureMessages;
 

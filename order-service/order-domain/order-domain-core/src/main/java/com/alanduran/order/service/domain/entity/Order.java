@@ -3,6 +3,7 @@ package com.alanduran.order.service.domain.entity;
 import com.alanduran.domain.entity.AggregateRoot;
 import com.alanduran.domain.valueobject.*;
 import com.alanduran.order.service.domain.exception.OrderDomainException;
+import com.alanduran.order.service.domain.exception.OrderNotFoundException;
 import com.alanduran.order.service.domain.valueobject.*;
 import lombok.Getter;
 
@@ -46,6 +47,7 @@ public class Order extends AggregateRoot<OrderId> {
     public void validateOrder() {
         validateInitialOrder();
         validateTotalPrice();
+        validateIfOrderItemsExistInRestaurant();
         validateItemsPrice();
     }
 
@@ -58,6 +60,14 @@ public class Order extends AggregateRoot<OrderId> {
     private void validateTotalPrice() {
         if (price == null || !price.isGreaterThanZero()) {
             throw new OrderDomainException("Total price must be grater than zero");
+        }
+    }
+
+    private void validateIfOrderItemsExistInRestaurant() {
+        for (OrderItem orderItem: this.getItems()) {
+            if (!orderItem.isItemValid()) {
+                throw new OrderDomainException("Product with id: " + orderItem.getProduct().getId().getValue() + "is not present in Restaurant with id: " + restaurantId.getValue());
+            }
         }
     }
 

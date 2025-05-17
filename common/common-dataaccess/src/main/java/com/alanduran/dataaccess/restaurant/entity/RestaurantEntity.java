@@ -15,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(RestaurantEntityId.class)
-@EqualsAndHashCode(of = {"restaurantId", "productID"})
+@EqualsAndHashCode(of = {"restaurantId", "productId"})
 @Table(name = "order_restaurant_m_view", schema = "restaurant")
 @Entity
 public class RestaurantEntity {
@@ -23,7 +23,7 @@ public class RestaurantEntity {
     @Id
     private UUID restaurantId;
     @Id
-    private UUID productID;
+    private UUID productId;
 
     private String restaurantName;
     private Boolean restaurantActive;

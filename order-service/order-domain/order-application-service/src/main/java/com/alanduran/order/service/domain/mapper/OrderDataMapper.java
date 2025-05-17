@@ -39,7 +39,7 @@ public class OrderDataMapper {
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .deliveryAddress(orderAddressToStreetAddress(createOrderCommand.getAddress()))
                 .price(new Money(createOrderCommand.getPrice()))
-                .orderItemList(orderItemsToORderItemEntities(createOrderCommand.getItems()))
+                .orderItemList(orderItemsToOrderItemEntities(createOrderCommand.getItems()))
                 .build();
     }
 
@@ -59,7 +59,7 @@ public class OrderDataMapper {
                 .build();
     }
 
-    private List<OrderItem> orderItemsToORderItemEntities(@NotNull List<com.alanduran.order.service.domain.dto.create.OrderItem> items) {
+    private List<OrderItem> orderItemsToOrderItemEntities(@NotNull List<com.alanduran.order.service.domain.dto.create.OrderItem> items) {
         return items.stream().map(orderItem ->
                 OrderItem.Builder.newBuilder()
                         .product(new Product(new ProductId(orderItem.getProductId())))
