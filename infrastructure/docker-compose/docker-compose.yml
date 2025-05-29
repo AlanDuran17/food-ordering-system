@@ -119,16 +119,12 @@ services:
       done;
 
       echo 'Creando tópicos...';
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic order-created-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic order-approved-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic order-rejected-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic order-cancelled-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic order-paid-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic payment-request-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic payment-cancelled-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic payment-completed-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic restaurant-approval-request-event;
-      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic restaurant-approval-response-event;
+
+      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic payment-request;
+      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic payment-response;
+      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic restaurant-approval-request;
+      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic restaurant-approval-response;
+      kafka-topics --create --if-not-exists --bootstrap-server kafka-broker-1:9092 --replication-factor 3 --partitions 1 --topic customer;
 
       echo 'Todos los tópicos fueron creados.'
       "

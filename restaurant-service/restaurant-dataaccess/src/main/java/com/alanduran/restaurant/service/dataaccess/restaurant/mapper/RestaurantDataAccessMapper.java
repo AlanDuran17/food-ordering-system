@@ -14,6 +14,7 @@ import com.alanduran.restaurant.service.domain.entity.Restaurant;
 import com.alanduran.restaurant.service.domain.valueobject.OrderApprovalId;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -44,6 +45,9 @@ public class RestaurantDataAccessMapper {
         return Restaurant.Builder.builder()
                 .restaurantId(new RestaurantId(restaurantEntity.getRestaurantId()))
                 .orderDetail(OrderDetail.Builder.builder()
+                        .totalAmount(restaurantProducts.stream()
+                                .map(Product::getPrice)
+                                .reduce(new Money(BigDecimal.ZERO), Money::add))
                         .products(restaurantProducts)
                         .build())
                 .active(restaurantEntity.getRestaurantActive())

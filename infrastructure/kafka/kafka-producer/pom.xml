@@ -36,5 +36,9 @@
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alanduran</groupId>
+            <artifactId>outbox</artifactId>
+        </dependency>
     </dependencies>
 </project>

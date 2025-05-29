@@ -30,8 +30,20 @@
             <artifactId>spring-tx</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-json</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.alanduran</groupId>
-            <artifactId>kafka-model</artifactId>
+            <artifactId>outbox</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alanduran</groupId>
+            <artifactId>saga</artifactId>
         </dependency>
     </dependencies>
 </project>

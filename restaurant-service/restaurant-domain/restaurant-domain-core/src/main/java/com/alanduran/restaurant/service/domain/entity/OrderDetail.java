@@ -5,6 +5,7 @@ import com.alanduran.domain.valueobject.Money;
 import com.alanduran.domain.valueobject.OrderId;
 import com.alanduran.domain.valueobject.OrderStatus;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
 public class OrderDetail extends BaseEntity<OrderId> {
 
     private OrderStatus orderStatus;
+    @Setter
     private Money totalAmount;
     private final List<Product> products;
 

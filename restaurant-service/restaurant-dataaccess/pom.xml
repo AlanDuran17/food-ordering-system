@@ -33,5 +33,9 @@
             <groupId>io.hypersistence</groupId>
             <artifactId>hypersistence-utils-hibernate-55</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alanduran</groupId>
+            <artifactId>outbox</artifactId>
+        </dependency>
     </dependencies>
 </project>

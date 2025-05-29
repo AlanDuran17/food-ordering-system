@@ -24,6 +24,13 @@
     <module>restaurant-service/restaurant-messagging</module>
     <module>restaurant-service/restaurant-domain/restaurant-domain-core</module>
     <module>restaurant-service/restaurant-domain/restaurant-application-service</module>
+      <module>customer-service/customer-container</module>
+      <module>customer-service/customer-application</module>
+    <module>customer-service/customer-dataaccess</module>
+    <module>customer-service/customer-messaging</module>
+    <module>customer-service/customer-domain</module>
+    <module>customer-service/customer-domain/customer-domain-core</module>
+    <module>customer-service/customer-domain/customer-application-service</module>
   </modules>
 
   <parent>
@@ -46,11 +53,44 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- COMMON DEPENDENCIES -->
       <dependency>
         <groupId>com.alanduran</groupId>
-        <artifactId>saga</artifactId>
+        <artifactId>common-domain</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>common-dataaccess</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>common-application</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- KAFKA DEPENDENCIES -->
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>kafka-producer</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>kafka-consumer</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>kafka-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>kafka-config-data</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- ORDER DEPENDENCIES -->
       <dependency>
         <groupId>com.alanduran</groupId>
         <artifactId>order-domain-core</artifactId>
@@ -76,6 +116,7 @@
         <artifactId>order-messaging</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <!-- PAYMENT DEPENDENCIES -->
       <dependency>
         <groupId>com.alanduran</groupId>
         <artifactId>payment-domain-core</artifactId>
@@ -83,42 +124,12 @@
       </dependency>
       <dependency>
         <groupId>com.alanduran</groupId>
-        <artifactId>common-domain</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
-        <artifactId>common-dataaccess</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
-        <artifactId>kafka-producer</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
-        <artifactId>kafka-consumer</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
-        <artifactId>kafka-model</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
-        <artifactId>kafka-config-data</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
-        <artifactId>common-application</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.alanduran</groupId>
         <artifactId>payment-application-service</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>payment-application</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -131,6 +142,7 @@
         <artifactId>payment-messaging</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <!-- RESTAURANT DEPENDENCIES -->
       <dependency>
         <groupId>com.alanduran</groupId>
         <artifactId>restaurant-domain-core</artifactId>
@@ -143,6 +155,11 @@
       </dependency>
       <dependency>
         <groupId>com.alanduran</groupId>
+        <artifactId>restaurant-application</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
         <artifactId>restaurant-dataaccess</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -151,6 +168,45 @@
         <artifactId>restaurant-messagging</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <!-- CUSTOMER DEPENDENCIES -->
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>customer-domain-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>customer-application-service</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>customer-application</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>customer-dataaccess</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>customer-messaging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- OUTBOX DEPENDENCIES -->
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>outbox</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- SAGA DEPENDENCIES -->
+      <dependency>
+        <groupId>com.alanduran</groupId>
+        <artifactId>saga</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- EXTERNAL DEPENDENCIES -->
       <dependency>
         <groupId>io.hypersistence</groupId>
         <artifactId>hypersistence-utils-hibernate-55</artifactId>
