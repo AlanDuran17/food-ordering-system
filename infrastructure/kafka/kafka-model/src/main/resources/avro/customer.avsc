@@ -1,13 +1,12 @@
 {
-  "namespace": "com.alanduran.kafka.order.avro.model",
+  "namespace": "com.food.ordering.system.kafka.order.avro.model",
   "type": "record",
   "name": "CustomerAvroModel",
   "fields": [
     {
       "name": "id",
       "type": {
-        "type": "string",
-        "logicalType": "uuid"
+        "type": "string"
       }
     },
     {

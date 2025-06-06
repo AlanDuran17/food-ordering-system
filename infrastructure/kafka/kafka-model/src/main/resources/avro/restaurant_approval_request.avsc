@@ -1,34 +1,30 @@
 {
-    "namespace": "com.alanduran.kafka.order.avro.model",
+    "namespace": "com.food.ordering.system.kafka.order.avro.model",
     "type": "record",
     "name": "RestaurantApprovalRequestAvroModel",
     "fields": [
         {
             "name": "id",
             "type": {
-                "type": "string",
-                "logicalType": "uuid"
+                "type": "string"
             }
         },
         {
             "name": "sagaId",
             "type": {
-                "type": "string",
-                "logicalType": "uuid"
+                "type": "string"
             }
         },
         {
             "name": "restaurantId",
             "type": {
-                "type": "string",
-                "logicalType": "uuid"
+                "type": "string"
             }
         },
         {
             "name": "orderId",
             "type": {
-                "type": "string",
-                "logicalType": "uuid"
+                "type": "string"
             }
         },
         {
